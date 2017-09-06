@@ -1,5 +1,7 @@
-<<<<<<< HEAD
+[You can find Pallida Oracle Syllabus here:]
 
-=======
-mkdir test-{1..5} | touch test-{1..5}/file-{1..5}.txt
->>>>>>> 1ba6afb45733954a8fa4f5e1a671254686c8e80e
+(../oracle/syllabus)
+
+
+This is a useful code snippet to create folders and files recursively:
+'mkdir test-{1..5} | touch test-{1..5}/file-{1..5}.txt'
