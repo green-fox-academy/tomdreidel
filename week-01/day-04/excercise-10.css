@@ -1,0 +1,37 @@
+div {
+    font-family: Courier, monospace;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #ffffff;
+    text-align: center;
+    width: 250px;
+    padding: 15px;
+
+}
+
+div:nth-child(1) {
+    background-color: #FF614F;
+    background-image: url(duck.png);
+    background-size: 60px;
+    background-position-x: 5%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+}
+
+div:nth-child(2) {
+    background-color: #623571;
+    background-image: url(duck.png);
+    background-size: 150px;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+}
+
+div:nth-child(3) {
+    background-color: #808080;
+    background-image: url(duck.png);
+    background-size: 80px;
+    background-position-x: 95%;
+    background-position-y: 95%;
+    background-repeat: no-repeat;
+}

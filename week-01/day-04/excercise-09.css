@@ -1,0 +1,11 @@
+article {
+    border: 2px solid #000000;
+    border-top: none;
+    width: 200px;
+    padding: 20px;
+    text-align: left;
+}
+
+article:hover {
+    background-color: #EC6842;
+}

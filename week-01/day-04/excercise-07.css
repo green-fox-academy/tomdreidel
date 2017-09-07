@@ -1,0 +1,17 @@
+body {
+    font-weight: bold;
+    width: 200px;
+}
+
+[class$="big"] {
+    color: blue;
+}
+
+div > div {
+    border: 1px solid green;
+}
+
+p {
+    background-color: yellow;
+    font-weight: normal;
+}

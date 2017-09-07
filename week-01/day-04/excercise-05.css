@@ -1,0 +1,28 @@
+h2{
+    color: #FF6347;
+}
+
+h3{
+    color: #8A2BE2;
+}
+
+p{
+    font-size: 0.8rem;
+    width: 50%;    
+}
+
+ul{
+    list-style-type: square;
+    font-size: 0.8rem;
+}
+   
+ol {
+    color: #FF56FF;
+    text-decoration: underline;
+    font-size: 0.8rem;
+}
+
+ol li:last-child {
+color: #000;
+text-decoration: underline;
+}
