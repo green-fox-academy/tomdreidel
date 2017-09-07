@@ -1,0 +1,9 @@
+h2 {
+    color: gold;
+    font-weight: lighter;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+}

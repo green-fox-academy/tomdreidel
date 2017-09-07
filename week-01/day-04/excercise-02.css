@@ -1,0 +1,32 @@
+div {
+    width: 344px;
+    height: 576px;
+    background-color: #3D88EC;
+    padding: 18px;
+    font-family: sans-serif;
+    font-size: 36px;
+    text-align: center;
+    line-height: 144px;
+    color: white; 
+}
+
+div > div{
+    height: 144px;
+    padding: 0px;
+}
+
+div div:nth-child(1) {
+    background-color: #EA7578;
+}
+
+div div:nth-child(2) {
+    background-color: #F2EF79;
+}
+
+div div:nth-child(3) {
+    background-color: #A5E6E6;
+}
+
+div div:nth-child(4) {
+    background-color: #7594DE;
+}

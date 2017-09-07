@@ -1,0 +1,26 @@
+div {
+    width: 344px;
+    height: 288px;
+    background-color: #3D88EC;
+    padding: 18px;
+    font-family: sans-serif;
+    font-size: 36px;
+    text-align: center;
+    line-height: 144px;
+    color: white;
+    margin-top: 10px;    
+}
+
+div > div{
+    height: 144px;
+    padding: 0px;
+    margin-top: 0px;    
+}
+
+div:first-child > div {
+    background-color: #EA7578;
+}
+
+div:last-child > div {
+    background-color: #A5E6E6;
+}
