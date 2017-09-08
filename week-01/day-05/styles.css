@@ -67,16 +67,12 @@ div > input {
 .tickbox {
     width: 300px;
     height: 200px;
-    display: flex;
 }
 
 .tickbox > div > * {
 display: inline;
 }
 
-.tickbox > div {
-    justify-content: flex-start;
-}
 
 .main-form > div:first-child {
     background-color: #938C96;
