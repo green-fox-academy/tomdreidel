@@ -1,0 +1,76 @@
+body {
+    background-color: #DCD6CD;
+}
+
+main {
+    box-sizing: border-box;    
+    /* background-color: #127731; */
+    padding-top: 10px;
+    margin: 0 auto;
+    height: 780px;
+    width: 620px;
+}
+
+header, footer, .main-form {
+    box-sizing: border-box;
+    /* background-color: gold;
+    border: 12px solid red; */
+    text-align: center;
+    padding: 6px;
+    margin-bottom: 10px;
+    
+}
+
+header {
+    height: 40px;
+}
+
+.main-form {
+    /* display: inline-block; */
+    float: left;
+    width: 50%;
+    height: 520px;
+    /* margin-right: -4px; why don't they fit next to each other? */
+    text-align: left;
+
+
+}
+
+footer {   
+    height: 180px;
+    display: inline-block;
+    width: 100%;
+}
+
+form > div {
+/* float: left;   */
+display: block;
+
+}
+
+label {
+
+}
+
+div > label {
+    display: block;
+}
+
+div > input {
+    display: block;
+}
+
+.tickbox {
+    width: 50%;
+}
+
+.tickbox > * {
+float: left;
+
+}
+
+.main-form > div:first-child {
+    background-color: #938C96;
+    width: 50%;
+    height: 20px;
+}
