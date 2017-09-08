@@ -2,6 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>My first form</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,10 +36,6 @@
             </div>
 
 <div class="tickbox">
-        <div>
-            <input type="checkbox" name="brand1" id="brand">
-            <label for="brand1"></label>
-        </div>
         
         <div>
             <input type="checkbox" name="brand1" id="brand">
@@ -93,9 +91,42 @@
 
     </div>
     <div class="main-form">
+        <div>Kapcsolat</div>
+        <div>
+            <label for="tel">telefonszám</label>
+            <input type="tel" name="telephone" id="tel" placeholder="+36 -- ---- -- --">
+        </div>
+        <div>
+            <label for="email">E-mail cím</label>
+            <input type="email" name="email" id="email" placeholder="valami@valami.com">
+        </div>
+        <div>
+            <label for="facebook">Facebook profilod</label>
+            <input type="url" name="facebook" id="facebook" placeholder="www.facebook.com/gipszjakab/">
+        </div>
+        <div>
+            <label for="twitter">Twitter profilod</label>
+            <input type="url" name="twitter" id="twitter" placeholder="www.twitter.com/gipszjakab">
+        </div>
+        <div>
+            <label for="house">Milyen házban laksz?</label>
+            <select name="house" id="house">
+<option value="Válassz típust!" selected></option>
+                <option value="flat">Lakás</option>
+                <option value="single">Családi ház</option>
+                <option value="farm">Tanya</option>
+                <option value="tent">Sátor</option>
+            </select>
+        </div>
 
     </div>
-    <footer>Footer</footer>
+    <footer>
+        <div>
+        <label for="intro">Bemutatkozás</label>
+            <textarea name="intro" id="intro" cols="30" rows="10" placeholder="Írj magadról pár mondatot!"></textarea>
+
+
+    </footer>
 </main>
     
 </body>
