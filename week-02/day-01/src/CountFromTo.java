@@ -16,13 +16,13 @@ public class CountFromTo {
         // 4
         // 5
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner numberScanner = new Scanner(System.in);
 
         System.out.println("Give me the first number:");
-        int a = scanner.nextInt();
+        int a = numberScanner.nextInt();
 
         System.out.println("Give me the second number:");
-        int b = scanner.nextInt();
+        int b = numberScanner.nextInt();
 
         if (a < b) {
             for (int i = a; i < b; i++) {
@@ -33,5 +33,4 @@ public class CountFromTo {
                 System.out.println("The second number should be bigger");
             }
         }
-
 }

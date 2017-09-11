@@ -18,13 +18,13 @@ public class MultiplicationTable {
         // 9 * 15 = 135
         // 10 * 15 = 150
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner numberScanner = new Scanner(System.in);
         System.out.println("Give me a number for multiplication:");
-        int number = scanner.nextInt();
+
+        int number = numberScanner.nextInt();
 
         for (int i = 1; i < 11; i++) {
             System.out.println(i + " * " + number + " = " + (i * number));
         }
     }
 }
-
