@@ -10,9 +10,6 @@ public class Bmi {
         float bmi = (float) (massInKg / Math.pow(heightInM,2));
         String bmiFormatted = new DecimalFormat("##.#").format(bmi);
 
-        System.out.println("Your BMI is: " + bmiFormatted + "%");
-
+        System.out.println("Your BMI is: " + bmiFormatted);
     }
-
-
 }

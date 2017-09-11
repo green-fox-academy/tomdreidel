@@ -13,6 +13,5 @@ public class IntroduceYourself {
         System.out.println("Redly Tamas");
         System.out.println("34");
         System.out.println("1.78");
-
     }
 }

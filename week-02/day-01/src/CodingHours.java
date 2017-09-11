@@ -19,8 +19,7 @@ public class CodingHours {
         float percentageCode = (((float) (dailyCode * workDays)) / workHours);
         String percentageFormat = new DecimalFormat("##.#%").format(percentageCode);
 
-
         System.out.println("Hours of coding by average attendee in a semester: " + semesterCode);
-        System.out.println("Percentage of coding hours: " + percentageFormat );
+        System.out.println("Percentage of coding hours: " + percentageFormat);
     }
 }
