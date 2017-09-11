@@ -10,7 +10,6 @@ public class AnimalsAndLegs {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("How many chickens are there?");
-
         int chickenLegs = scanner.nextInt();
 
         System.out.println("How many pigs are there?");
