@@ -1,0 +1,7 @@
+.idea/
+out
+*.xml
+*.iml
+*.json
+
+.DS_Store
