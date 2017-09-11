@@ -2,18 +2,18 @@ import java.util.Scanner;
 
 public class AverageOfInput {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner numberScanner = new Scanner(System.in);
 
         System.out.println("Give me the first number:");
-        int a = scanner.nextInt();
+        int a = numberScanner.nextInt();
         System.out.println("Give me the second number:");
-        int b = scanner.nextInt();
+        int b = numberScanner.nextInt();
         System.out.println("Give me the third number:");
-        int c = scanner.nextInt();
+        int c = numberScanner.nextInt();
         System.out.println("Give me the fourth number:");
-        int d = scanner.nextInt();
+        int d = numberScanner.nextInt();
         System.out.println("Give me the fifth number:");
-        int e = scanner.nextInt();
+        int e = numberScanner.nextInt();
 
         float averageNum = (a + b + c + d + e) / 5;
 

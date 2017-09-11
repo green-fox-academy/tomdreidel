@@ -15,10 +15,5 @@ public class Cuboid {
 
         System.out.println("Surface area: " + surface);
         System.out.println("Volume: " + volume);
-
-
-
-
-
     }
 }

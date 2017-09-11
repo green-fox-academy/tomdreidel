@@ -8,9 +8,10 @@ public class OneTwoALot {
         // If the number is two it should print: Two
         // If the number is more than two it should print: A lot
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Give me the number to classify");
-        int number = scanner.nextInt();
+        Scanner numberScanner = new Scanner(System.in);
+
+        System.out.println("Give me the number to classify:");
+        int number = numberScanner.nextInt();
 
         if(number < 1) {
             System.out.println("Not enough");

@@ -6,8 +6,7 @@ public class VariableMutation {
 
         System.out.println(a);
 
-
-
+        //////////////////////////////////////////
 
         int b = 100;
         // make it smaller by 7
@@ -15,8 +14,7 @@ public class VariableMutation {
 
         System.out.println(b);
 
-
-
+        //////////////////////////////////////////
 
         int c = 44;
         // please double c's value
@@ -24,8 +22,7 @@ public class VariableMutation {
 
         System.out.println(c);
 
-
-
+        //////////////////////////////////////////
 
         int d = 125;
         // please divide by 5 d's value
@@ -33,8 +30,7 @@ public class VariableMutation {
 
         System.out.println(d);
 
-
-
+        //////////////////////////////////////////
 
         int e = 8;
         // please cube of e's value
@@ -42,8 +38,7 @@ public class VariableMutation {
 
         System.out.println(e);
 
-
-
+        //////////////////////////////////////////
 
         int f1 = 123;
         int f2 = 345;
@@ -51,8 +46,7 @@ public class VariableMutation {
 
         System.out.println(f1 > f2);
 
-
-
+        //////////////////////////////////////////
 
         int g1 = 350;
         int g2 = 200;
@@ -60,37 +54,35 @@ public class VariableMutation {
 
         System.out.println((g2 * 2) > g1);
 
-
-
+        //////////////////////////////////////////
 
         int h = 135798745;
         // tell if it has 11 as a divisor (print as a boolean)
 
         System.out.println(h % 11 == 0);
 
-
+        //////////////////////////////////////////
 
         int i1 = 10;
         int i2 = 3;
         // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
 
-        System.out.println(i1 > (int) Math.pow(i2,2) && i1 < (int) Math.pow(i2,3));
+        System.out.println(i1 > ((int) Math.pow(i2,2)) && i1 < ((int) Math.pow(i2,3)));
 
-
+        //////////////////////////////////////////
 
         int j = 1521;
         // tell if j is dividable by 3 or 5 (print as a boolean)
 
         System.out.println(j % 3 == 0 || j % 5 == 0);
 
-
+        //////////////////////////////////////////
 
         String k = "Apple";
-        //fill the k variable with its cotnent 4 times
+        //fill the k variable with its content 4 times
 
         k = k + k + k + k;
 
         System.out.println(k);
     }
-
 }
