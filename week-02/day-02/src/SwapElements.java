@@ -9,9 +9,5 @@ public class SwapElements {
         String temp = abc[0];
         abc[0] = abc[2];
         abc[2] = temp;
-/*      just for testing purposes
-        for (int i = 0; i < abc.length; i++) {
-            System.out.println(abc[i]);
-        }*/
     }
 }
