@@ -12,34 +12,39 @@ public class IsInList{
 
         System.out.println(arrayRadar(list, checkList));
 
-//        System.out.println(arrayFinder(list, checkList));
-//        need to revise this
-
-
-
-
-
+        System.out.println(arrayFinder(list, checkList));
     }
 
     public static Boolean arrayRadar (ArrayList arrayInArray, ArrayList checkArray) {
         return arrayInArray.containsAll(checkArray);
     }
 
-//    public static Boolean arrayFinder (ArrayList arrayInArray, ArrayList checkArray) {
-//        ArrayList<Boolean> evaluator = new ArrayList<>(Arrays.asList(true));
-//
-//        ListIterator<Integer> arrayIterator = arrayInArray.listIterator();
-//        ListIterator<Integer> checkIterator = checkArray.listIterator();
-//        while (checkIterator.hasNext()) {
-//            while (arrayIterator.hasNext()) {
-//                if ((int) checkIterator.next() == (int) arrayIterator.next()) {
-//                    evaluator.add(true);
-//                    break;
-//                }
-//            }
-//        }
-//        return !evaluator.contains(false);
-//
-//    }
+    public static Boolean arrayFinder (ArrayList arrayInArray, ArrayList checkArray) {
 
+        boolean[] matchCounter = new boolean[checkArray.size()];
+
+        int[] checkArrayToArray = new int[checkArray.size()];
+        for (int i = 0; i < checkArray.size() ; i++) {
+            checkArrayToArray[i] = Integer.parseInt(String.valueOf(checkArray.get(i)));
+        }
+
+        int[] arrayInArrayToArray = new int[arrayInArray.size()];
+        for (int j = 0; j < arrayInArray.size(); j++) {
+            arrayInArrayToArray[j] = Integer.parseInt(String.valueOf(arrayInArray.get(j)));
+        }
+
+        for (int k = 0; k < checkArrayToArray.length; k++) {
+            for (int l = 0; l < arrayInArray.size(); l++) {
+                if (checkArrayToArray[k] == Integer.parseInt(String.valueOf(arrayInArray.get(l)))) {
+                    if (!matchCounter[k]) {
+                        matchCounter[k] = true;
+                    }
+                }
+            }
+        }
+        for (boolean b: matchCounter) {
+            if(!b) return false;
+        }
+        return true;
+    }
 }
