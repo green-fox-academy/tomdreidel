@@ -20,24 +20,21 @@ public class DrawDiagonal {
 
         if (size < 1) {
             System.out.println("Not big enough");
-        }
-        else if (size == 1) {
+        } else if (size == 1) {
             System.out.println("%%%%%");
-        }
-        else if (size == 2) {
+        } else if (size == 2) {
             System.out.println("%%%%%");
             System.out.println("%%%%%");
-        }
-        else if (size == 3) {
+        } else if (size == 3) {
             System.out.println("%%%%%");
             System.out.println("% % %");
             System.out.println("%%%%%");
-        }
-        else {
+        } else {
             System.out.println("%%%%%");
             for (int i = 0; i < (size - 2); i++) {
                 System.out.println("%   %");
             }
             System.out.println("%%%%%");
+        }
     }
 }

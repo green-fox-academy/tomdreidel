@@ -16,10 +16,12 @@ public class DrawTriangle {
         System.out.println("Give me the size of the triangle:");
 
         int number = numberScanner.nextInt();
-        String asterisk = "";
 
-        for (int i = 1; i < (number + 1); i++) {
-            System.out.println(asterisk += "*");
+        for (int i = 0; i < number; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }

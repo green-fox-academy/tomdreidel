@@ -15,19 +15,15 @@ public class DrawPyramid {
 
         Scanner numberScanner = new Scanner(System.in);
         System.out.println("Give me the size of the pyramid:");
-
         int number = numberScanner.nextInt();
 
         for (int i = 0; i < number; i++) {
-
             for (int j = 0; j < (number - i); j++) {
                 System.out.print(" ");
             }
-
-            for (int k = 0; k < (i * 2 - 1); k++) {
+            for (int k = 0; k <= i; k++) {
                 System.out.print("*");
             }
-
             System.out.println();
         }
     }
