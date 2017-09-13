@@ -9,9 +9,5 @@ public class DoubleItems {
         for(int i = 0; i < ag.length; i++) {
             ag[i]*= 2;
         }
-        /* just for testing
-        for(int i = 0; i < ag.length; i++) {
-            System.out.println(ag[i]);
-        }*/
     }
 }
