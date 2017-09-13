@@ -5,10 +5,10 @@ public class AppendLetter{
         ArrayList<String> far = new ArrayList<>(Arrays.asList("kuty", "macsk", "kacs", "rók", "halacsk"));
         // Add "a" to every string in the far list.
 
-        ListIterator<String> literator = far.listIterator();
+        ListIterator<String> iteratorAnimal = far.listIterator();
 
-        while (literator.hasNext()) {
-            far.set(literator.nextIndex(), literator.next() + "a");
+        while (iteratorAnimal.hasNext()) {
+            far.set(iteratorAnimal.nextIndex(), iteratorAnimal.next() + "a");
         }
         System.out.println(far);
     }
