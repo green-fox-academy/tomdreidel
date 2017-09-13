@@ -12,6 +12,6 @@ public class AppendAnimals {
     }
 
     public static String appender(String nimalsToCorrect) {
-       return nimalsToCorrect = nimalsToCorrect + "a";
+       return nimalsToCorrect + "a";
     }
 }
