@@ -9,7 +9,7 @@ public class Doubling {
         System.out.println(doubling(ak));
     }
 
-    public static int doubling(int param) {
-        return param *= 2;
+    public static int doubling(int doubleMe) {
+        return doubleMe * 2;
     }
 }
