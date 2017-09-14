@@ -7,7 +7,7 @@ public class Bmi {
 
         // Print the Body mass index (BMI) based on these values
 
-        float bmi = (float) (massInKg / Math.pow(heightInM,2));
+        float bmi = (float) (massInKg / Math.pow(heightInM, 2));
         String bmiFormatted = new DecimalFormat("##.#").format(bmi);
 
         System.out.println("Your BMI is: " + bmiFormatted);
