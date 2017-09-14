@@ -11,6 +11,6 @@ public class SecondsInADay {
         int daySeconds = 24 * 60 * 60;
         int remainingSeconds = daySeconds - currentTimeSeconds;
 
-        System.out.println("Remaining seconds from today :" + currentTimeSeconds);
+        System.out.println("Remaining seconds from today :" + remainingSeconds);
     }
 }
