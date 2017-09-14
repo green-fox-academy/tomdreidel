@@ -15,7 +15,7 @@ public class TwoNumbers {
         System.out.println(a - b);
         System.out.println(a * b);
         System.out.println((float) a / b);
-        System.out.println( (int) a / b);
+        System.out.println(a / b);
         System.out.println(a % b);
     }
 }
