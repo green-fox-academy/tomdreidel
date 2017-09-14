@@ -19,13 +19,13 @@ public class CountFromTo {
         Scanner numberScanner = new Scanner(System.in);
 
         System.out.println("Give me the first number:");
-        int a = numberScanner.nextInt();
+        int startNumber = numberScanner.nextInt();
 
         System.out.println("Give me the second number:");
-        int b = numberScanner.nextInt();
+        int endNumber = numberScanner.nextInt();
 
-        if (a < b) {
-            for (int i = a; i < b; i++) {
+        if (startNumber < endNumber) {
+            for (int i = startNumber; i < endNumber; i++) {
                 System.out.println(i);
             }
         }
