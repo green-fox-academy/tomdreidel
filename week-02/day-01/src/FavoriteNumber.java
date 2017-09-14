@@ -1,7 +1,3 @@
-import sun.tools.java.ScannerInputReader;
-
-import java.util.Scanner;
-
 public class FavoriteNumber {
     public static void main(String[] args) {
         int favoriteNumber = 8; // changed the original variable name to get in line with the style guide.
