@@ -15,7 +15,7 @@ public class ConditionalVariableMutation {
 
 
         int b = 13;
-        String out2 = "";
+        String out2;
         // if b is between 10 and 20 set out2 to "Sweet!"
         // if less than 10 set out2 to "More!",
         // if more than 20 set out2 to "Less!"
@@ -59,7 +59,7 @@ public class ConditionalVariableMutation {
 
         int d = 8;
         int time = 120;
-        String out3 = "";
+        String out3;
         // if d is dividable by 4
         // and time is not more than 200
         // set out3 to "check"
