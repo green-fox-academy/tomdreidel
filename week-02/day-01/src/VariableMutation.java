@@ -34,7 +34,7 @@ public class VariableMutation {
 
         int e = 8;
         // please cube of e's value
-        e = (int) Math.pow(e,3);
+        e = (int) Math.pow(e, 3);
 
         System.out.println(e);
 
@@ -67,7 +67,7 @@ public class VariableMutation {
         int i2 = 3;
         // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
 
-        System.out.println(i1 > ((int) Math.pow(i2,2)) && i1 < ((int) Math.pow(i2,3)));
+        System.out.println(i1 > ((int) Math.pow(i2, 2)) && i1 < ((int) Math.pow(i2, 3)));
 
         //////////////////////////////////////////
 
