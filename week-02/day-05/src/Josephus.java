@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Josephus {
@@ -15,9 +16,31 @@ public class Josephus {
   }
 
   private static String josephusSolver(int seat) {
+    ArrayList<Integer> deadCircle = new ArrayList<>();
+    for (int i = 0; i < seat; i++) {
+      deadCircle.add(i + 2);
+    }
 
+    while (deadCircle.size() > 1) {
+      ArrayList<Integer> peopleToDelete = new ArrayList<>();
 
-    return "" + seat;
+      if (deadCircle.size() % 2 ==0) {
+        for (int j = 0; j < deadCircle.size(); j += 2) {
+          peopleToDelete.add(deadCircle.get(j));
+        }
+      }
+      else {
+        for (int j = 2; j < deadCircle.size(); j += 2) {
+          peopleToDelete.add(deadCircle.get(j));
+        }
+      }
+
+      for (int k = 0; k < peopleToDelete.size(); k++) {
+          int innerTemp = peopleToDelete.get(k);
+          int innerDeleteIndex = deadCircle.indexOf(innerTemp);
+          deadCircle.remove(innerDeleteIndex);
+        }
+    }
+    return "" + deadCircle;
   }
-
 }
