@@ -12,11 +12,27 @@ public class FunctionToCenter {
       // and draws a line from that point to the center of the canvas.
       // fill the canvas with lines from the edges, every 20 px, to the center.
 
+      int lineStep = 20;
 
-
+      for (int i = 0; i < WIDTH / 20; i++) {
+        lineDrawer(graphics, i * lineStep, 0);
+      }
+      for (int i = 0; i < WIDTH / 20; i++) {
+        lineDrawer(graphics, i * lineStep, HEIGHT);
+      }
+      for (int i = 0; i < HEIGHT / 20; i++) {
+        lineDrawer(graphics, 0, i * lineStep);
+      }
+      for (int i = 0; i <= HEIGHT / 20; i++) {
+        lineDrawer(graphics, WIDTH, i * lineStep);
+      }
     }
 
-//    Don't touch the code below
+  private static void lineDrawer(Graphics graphics, int xPoint, int yPoint) {
+    graphics.drawLine(xPoint, yPoint, WIDTH / 2, HEIGHT / 2);
+  }
+
+  //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
     public static void main(String[] args) {
