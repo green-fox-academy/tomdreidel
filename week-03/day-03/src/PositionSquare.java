@@ -12,11 +12,20 @@ public class PositionSquare {
       // and draws a 50x50 square from that point.
       // draw 3 squares with that function.
 
+      int[] xPoints = {0, 45, 175};
+      int[] yPoints = {80, 180, 200};
 
-
+      for (int i = 0; i < 3; i++) {
+        squareDropper(graphics, xPoints[i], yPoints[i]);
+      }
     }
 
-//    Don't touch the code below
+  private static void squareDropper(Graphics graphics, int xPoint, int yPoint) {
+    int squareSize = 50;
+    graphics.drawRect(xPoint, yPoint, squareSize, squareSize);
+  }
+
+  //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
 
