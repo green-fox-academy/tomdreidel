@@ -4,11 +4,17 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Drawing {
+public class LineInTheMiddle {
 
     public static void mainDraw(Graphics graphics){
       //  draw a red horizontal line to the canvas' middle.
       //  draw a green vertical line to the canvas' middle.
+
+
+      graphics.setColor(Color.RED);
+      graphics.drawLine(0, HEIGHT / 2, WIDTH, HEIGHT / 2);
+      graphics.setColor(Color.GREEN);
+      graphics.drawLine(WIDTH / 2, 0 / 2, WIDTH / 2, HEIGHT);
 
 
 
