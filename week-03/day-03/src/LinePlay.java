@@ -10,8 +10,16 @@ public class LinePlay {
       // reproduce this:
       // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/line-play/r1.png]
 
+      int lineStep = 20;
 
-
+      for (int i = 1; i < WIDTH / lineStep - 1; i++) {
+        graphics.setColor(new Color(52,214,	105));
+        graphics.drawLine(0, 50 + i * lineStep, i * lineStep, HEIGHT);
+      }
+      for (int i = 1; i < HEIGHT / lineStep - 3; i++) {
+        graphics.setColor(new Color(176, 36, 233));
+        graphics.drawLine(50 + i * lineStep, 0, WIDTH, i * lineStep);
+      }
     }
 
 //    Don't touch the code below
