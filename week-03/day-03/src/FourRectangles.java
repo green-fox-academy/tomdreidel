@@ -9,8 +9,10 @@ public class FourRectangles {
     public static void mainDraw(Graphics graphics){
       // draw four different size and color rectangles.
 
-
-
+      for (int i = 0; i < 4; i++) {
+        graphics.setColor(new Color(255 - 50 * i, 200 - 25 * i, 150 - 30 * i));
+        graphics.fillRect(0, 0, 300 - 50 * i, 300 - 50 * i);
+      }
     }
 
 //    Don't touch the code below
