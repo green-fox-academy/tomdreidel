@@ -31,7 +31,6 @@ public class StarryNight {
     return (int)((Math.random() * 255));
   }
 
-
   //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
