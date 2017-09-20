@@ -9,8 +9,18 @@ public class ColoredBox {
     public static void mainDraw(Graphics graphics){
       // draw a box that has different colored lines on each edge.
 
+      int[] xCoordinates = {50, 150, 150, 50};
+      int[] yCoordinates = {50, 50, 150, 150};
 
-
+      for (int i = 0; i < 4; i++) {
+        if (i == 3) {
+          graphics.setColor(new Color (255 - i * 20,i * 20,i * 20));
+          graphics.drawLine(xCoordinates[i], yCoordinates[i], xCoordinates[i - 3], yCoordinates[i - 3]);
+          break;
+        }
+        graphics.setColor(new Color (i * 50,255 - i * 50,255 - i * 50));
+        graphics.drawLine(xCoordinates[i], yCoordinates[i], xCoordinates[i + 1], yCoordinates[i + 1]);
+      }
     }
 
 //    Don't touch the code below
