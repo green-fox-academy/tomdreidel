@@ -12,11 +12,18 @@ public class CenterBoxFunction {
       // and draws a square of that size to the center of the canvas.
       // draw 3 squares with that function.
 
+      int[] squareSize = {240, 180, 120};
 
-
+      for (int i = 0; i < 3; i++) {
+        squareBuilder(graphics, squareSize[i]);
+      }
     }
 
-//    Don't touch the code below
+  private static void squareBuilder(Graphics graphics, int squareSize) {
+    graphics.drawRect((WIDTH - squareSize) / 2, (HEIGHT - squareSize) / 2, squareSize, squareSize);
+  }
+
+  //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
 
