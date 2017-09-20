@@ -14,11 +14,23 @@ public class ConnectTheDots {
       // connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
       // {120, 100}, {85, 130}, {50, 100}}
 
+      int[][] boxPoints = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
+      int[][] whatPoints = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
 
-
+      connectThings(graphics, whatPoints);
     }
 
-//    Don't touch the code below
+  private static void connectThings(Graphics graphics, int[][] points) {
+    for (int i = 0; i < points.length; i++) {
+      if (i == points.length - 1) {
+        graphics.drawLine(points[i][0], points[i][1], points[0][0], points[0][1]);
+      } else {
+        graphics.drawLine(points[i][0], points[i][1], points[i + 1][0], points[i + 1][1]);
+      }
+    }
+  }
+
+  //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
 
