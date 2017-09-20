@@ -10,8 +10,14 @@ public class PurpleSteps3d {
       // reproduce this:
       // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
+      int squareSize = 10;
 
-
+      for (int i = 0; i < 6; i++) {
+        graphics.setColor(new Color(181, 75, 234));
+        graphics.fillRect((((i * (i + 1)) / 2) * squareSize) + squareSize, (((i * (i + 1)) / 2) * squareSize) + squareSize, squareSize + (i * squareSize), squareSize + (i * squareSize));
+        graphics.setColor(Color.BLACK);
+        graphics.drawRect((((i * (i + 1)) / 2) * squareSize) + squareSize, (((i * (i + 1)) / 2) * squareSize) + squareSize, squareSize + (i * squareSize), squareSize + (i * squareSize));
+      }
     }
 
 //    Don't touch the code below
