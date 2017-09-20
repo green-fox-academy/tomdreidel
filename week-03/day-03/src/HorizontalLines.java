@@ -12,11 +12,20 @@ public class HorizontalLines {
       // and draws a 50 long horizontal line from that point.
       // draw 3 lines with that function.
 
+      int[] xPoints = {0, 45, 175};
+      int[] yPoints = {80, 180, 200};
 
-
+      for (int i = 0; i < 3; i++) {
+       drawForward(graphics, xPoints[i], yPoints[i]);
+      }
     }
 
-//    Don't touch the code below
+  private static void drawForward(Graphics graphics, int xPoint, int yPoint) {
+      int lineLength = 50;
+      graphics.drawLine(xPoint, yPoint, xPoint + lineLength, yPoint);
+  }
+
+  //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
 

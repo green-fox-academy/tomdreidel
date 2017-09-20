@@ -14,13 +14,17 @@ public class GoToCenter {
 
       int[] xPoints = {0, 45, 175};
       int[] yPoints = {80, 180, 200};
-      int centerX = WIDTH / 2;
-      int centerY = HEIGHT / 2;
 
       for (int i = 0; i < 3; i++) {
-        graphics.drawLine(xPoints[i], yPoints[i], centerX, centerY);
+        centerPointer(graphics, xPoints[i], yPoints[i]);
       }
     }
+
+  private static void centerPointer(Graphics graphics, int xPoint, int yPoint) {
+      int centerX = WIDTH / 2;
+      int centerY = HEIGHT / 2;
+      graphics.drawLine(xPoint, yPoint, centerX, centerY);
+  }
 
   //    Don't touch the code below
     static int WIDTH = 320;
