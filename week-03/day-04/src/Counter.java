@@ -8,7 +8,7 @@ public class Counter {
   private static String countdown(int number) {
     String result = " " + number;
     if (number == 1) {
-      result = result + " 0";
+      result = " 1";
       return result;
     }
     result = result + countdown(number - 1);
