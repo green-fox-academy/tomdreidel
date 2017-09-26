@@ -7,7 +7,7 @@ public class Person {
   String gender;
 
   public Person() {
-
+    this("Jane Doe", 30, "female");
   }
 
   public Person(String name, int age, String gender) {

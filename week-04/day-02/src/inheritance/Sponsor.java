@@ -22,4 +22,8 @@ public class Sponsor extends Person {
   public String getGoal() {
     return "My goal is: Hire brilliant junior software developers.";
   }
+
+  public void hire() {
+    this.hiredStudents ++;
+  }
 }
