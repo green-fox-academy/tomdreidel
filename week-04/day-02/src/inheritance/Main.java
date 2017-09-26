@@ -16,5 +16,17 @@ public class Main {
 
     Student jane = new Student();
     System.out.println(jane.introduce());
+
+    Mentor hilde = new Mentor();
+    Mentor bernard = new Mentor("Bernard", 107, "male", "senior");
+
+    System.out.println(hilde.introduce());
+    System.out.println(bernard.getGoal());
+
+    Sponsor google = new Sponsor();
+    Sponsor elon = new Sponsor("Elon", 42, "male", "Tesla");
+
+    System.out.println(google.introduce());
+    System.out.println(elon.introduce());
   }
 }
