@@ -9,12 +9,15 @@ public class Board extends JComponent implements KeyListener {
   int tileSize;
   Map myMap;
   Hero myHero;
+  EnemyLayout myEnemies;
 
 
   public Board() {
 
     myMap = new Map();
     myHero = new Hero(myMap);
+    myEnemies = new EnemyLayout(myMap);
+
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -39,6 +42,10 @@ public class Board extends JComponent implements KeyListener {
       myMap.get(i).draw(graphics);
     }
     myHero.draw(graphics);
+    for (int i = 0; i < myEnemies.size(); i++) {
+      myEnemies.get(i).draw(graphics);
+    }
+
 
 
   }

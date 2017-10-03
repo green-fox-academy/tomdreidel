@@ -21,10 +21,6 @@ public class PositionedImage {
     }
   }
 
-  public PositionedImage() {
-
-  }
-
   public void draw(Graphics graphics) {
     int tileSize = 72;
     if (image != null) {
