@@ -12,5 +12,6 @@ public class Main {
     frame.setVisible(true);
     frame.pack();
     frame.addKeyListener(board);
+    board.run();
   }
 }

@@ -6,8 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
-  int tileSize;
-  Map myMap;
+  public static Map myMap;
   Hero myHero;
   EnemyLayout myEnemies;
 
@@ -18,7 +17,6 @@ public class Board extends JComponent implements KeyListener {
     myHero = new Hero(myMap);
     myEnemies = new EnemyLayout(myMap);
 
-
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
@@ -27,14 +25,10 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    // here you have a 720x720 canvas
-    // you can create and draw an image using the class below e.g.
-
-
 
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        PositionedImage image = new PositionedImage("assets/floor.png", i, j);
+        PositionedImage image = new PositionedImage("assets/floor.png", i, j, myMap);
         image.draw(graphics);
       }
     }
@@ -42,12 +36,24 @@ public class Board extends JComponent implements KeyListener {
       myMap.get(i).draw(graphics);
     }
     myHero.draw(graphics);
+
     for (int i = 0; i < myEnemies.size(); i++) {
       myEnemies.get(i).draw(graphics);
     }
+  }
 
-
-
+  public void run() {
+    while (true) {
+      for (int i = 0; i < myEnemies.size(); i++) {
+        myEnemies.get(i).patrolMove();
+        repaint();
+      }
+        try {
+          Thread.sleep(50);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+    }
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it

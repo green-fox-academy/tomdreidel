@@ -1,12 +1,16 @@
 package wanderer;
 
+import java.util.Random;
+
 public class Boss extends PositionedImage {
 
-
-  public Boss(String fileName, int posX, int posY) {
-    super("assets/boss.png", posX, posY);
-    }
+  public Boss(int posX, int posY) {
+    super("assets/boss.png", posX, posY, myMap);
+    patrolMove();
   }
+
+
+}
 
 //  public void bossMove() {
 //      int temp = (int) (Math.random() * 4);
