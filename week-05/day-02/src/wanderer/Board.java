@@ -6,11 +6,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
-  public static Map myMap;
+  Map myMap;
   Hero myHero;
   EnemyLayout myEnemies;
-
-
 
   public Board() {
 
@@ -18,7 +16,6 @@ public class Board extends JComponent implements KeyListener {
     myEnemies = new EnemyLayout(myMap);
     myHero = new Hero(myMap, myEnemies);
 
-    // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
   }
@@ -29,7 +26,7 @@ public class Board extends JComponent implements KeyListener {
 
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        PositionedImage image = new PositionedImage("assets/floor.png", i, j, myMap);
+        PositionedImage image = new Tile(i, j);
         image.draw(graphics);
       }
     }
@@ -45,17 +42,17 @@ public class Board extends JComponent implements KeyListener {
 
   public void run() {
     while (true) {
-      for (int i = 0; i < myEnemies.size(); i++) {
-        if (!myEnemies.get(i).isFight) {
-          myEnemies.get(i).patrolMove(true);
+      for (Creature c: myEnemies) {
+        if (!c.isFight) {
+          c.patrolMove(true);
         }
-        repaint();
       }
-        try {
-          Thread.sleep(800);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+      repaint();
+      try {
+        Thread.sleep(1600);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     }
   }
 

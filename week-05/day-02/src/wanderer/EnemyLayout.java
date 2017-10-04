@@ -3,11 +3,11 @@ package wanderer;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class EnemyLayout extends ArrayList<PositionedImage> {
+public class EnemyLayout extends ArrayList<Creature> {
 
   public EnemyLayout(Map map) {
     Random generator = new Random();
-    int bossCount = generator.nextInt(4) + 3;
+    int bossCount = generator.nextInt(8) + 4;
     for (int i = 0; i < bossCount; i++) {
       int tempX = generator.nextInt(9) + 1;
       int tempY = generator.nextInt(9) + 1;
@@ -16,9 +16,9 @@ public class EnemyLayout extends ArrayList<PositionedImage> {
         tempY = generator.nextInt(9) + 1;
       }
       if (i == 0) {
-        this.add(new Boss(tempX, tempY));
+        this.add(new Boss(tempX, tempY, map));
       } else if (i > 0) {
-        this.add(new Skeleton(tempX, tempY, i));
+        this.add(new Skeleton(tempX, tempY, map));
       }
     }
   }
@@ -32,7 +32,7 @@ public class EnemyLayout extends ArrayList<PositionedImage> {
 //    return 0;
 //  }
 
-  public void die(PositionedImage enemy) {
+  public void die(Creature enemy) {
     if (this.size() > 0) {
       this.remove(enemy);
     }

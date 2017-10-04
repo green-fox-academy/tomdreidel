@@ -2,14 +2,15 @@ package wanderer;
 
 import java.util.Random;
 
-public class Hero extends PositionedImage {
+public class Hero extends Creature {
   EnemyLayout myEnemyList;
-  PositionedImage actualEnemy;
+  Creature actualEnemy;
 
   public Hero(Map myMap, EnemyLayout myEnemies) {
-    super("assets/hero-down.png", 0, 0, myMap);
+    super("assets/hero-down.png", 0, 0);
     this.myEnemyList = myEnemies;
     this.health = 35;
+    this.myMap = myMap;
   }
 
   @Override
@@ -40,7 +41,7 @@ public class Hero extends PositionedImage {
     fightScan();
   }
 
-  public void fight(PositionedImage actualEnemy) {
+  public void fight(Creature actualEnemy) {
     this.isFight = true;
     actualEnemy.isFight = true;
     Random generator = new Random();
@@ -58,18 +59,12 @@ public class Hero extends PositionedImage {
   }
 
   public void hit() {
-//    if (!this.isFight) {
-//      this.isFight = true;
-//    }
-//    Random generator = new Random();
-//    int heroHit = 5 + generator.nextInt(5);
-//    actualEnemy.health -= heroHit;
-//    if (actualEnemy.health < 0) {
-//      myEnemyList.die(actualEnemy);
-//    }
+    Random hit = new Random();
     if (actualEnemy.posX == this.posX && actualEnemy.posY == this.posY) {
-      myEnemyList.die(actualEnemy);
-
+      actualEnemy.health -= (5 + hit.nextInt(6));
+      if (actualEnemy.health < 1) {
+        myEnemyList.die(actualEnemy);
+      }
     }
 
   }

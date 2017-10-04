@@ -1,6 +1,5 @@
 package wanderer;
 
-import java.util.Random;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -9,16 +8,11 @@ import java.io.IOException;
 
 public class PositionedImage {
 
-  public static Map myMap;
+  Map myMap;
   BufferedImage image;
   int posX, posY;
-  int health;
-  int baseDamage;
-  int armor;
-  boolean isFight;
 
-
-  public PositionedImage(String filename, int posX, int posY, Map myMap) {
+  public PositionedImage(String filename, int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
     this.myMap = myMap;
@@ -36,30 +30,6 @@ public class PositionedImage {
     }
   }
 
-  public void moveLeft() {
-    if (this.getPosX() > 0 && !myMap.isWall(this.getPosX() - 1, getPosY())) {
-      this.setPosX(this.getPosX() - 1);
-    }
-  }
-
-  public void moveRight() {
-    if (this.getPosX() < 9 && !myMap.isWall(this.getPosX() + 1, getPosY())) {
-      this.setPosX(this.getPosX() + 1);
-    }
-  }
-
-  public void moveUp() {
-    if (this.getPosY() > 0 && !myMap.isWall(this.getPosX(), getPosY() - 1)) {
-      this.setPosY(this.getPosY() - 1);
-    }
-  }
-
-  public void moveDown() {
-    if (this.getPosY() < 9 && !myMap.isWall(this.getPosX(), getPosY() + 1)) {
-      this.setPosY(this.getPosY() + 1);
-    }
-
-  }
 
   public void setImageFile(String imageFile) {
     try {
@@ -83,26 +53,5 @@ public class PositionedImage {
 
   public void setPosY(int posY) {
     this.posY = posY;
-  }
-
-  public void patrolMove(boolean move) {
-    if (move) {
-
-      Random generator = new Random();
-      switch (generator.nextInt(4)) {
-        case 0:
-          this.moveUp();
-          break;
-        case 1:
-          this.moveRight();
-          break;
-        case 2:
-          this.moveDown();
-          break;
-        case 3:
-          this.moveLeft();
-          break;
-      }
-    }
   }
 }
