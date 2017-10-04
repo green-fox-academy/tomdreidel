@@ -8,7 +8,7 @@ public class Map extends ArrayList<Wall> {
   public Map() {
     for (int i = 1; i < 10; i++) {
       for (int j = 1; j < 10; j++) {
-        if (Math.random() > 0.6) {
+        if (Math.random() > 0.8) {
           this.add(new Wall(i, j));
         }
       }

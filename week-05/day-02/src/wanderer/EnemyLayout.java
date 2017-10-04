@@ -22,4 +22,20 @@ public class EnemyLayout extends ArrayList<PositionedImage> {
       }
     }
   }
+
+//  public int fightScan(int posX, int posY) {
+//    for (int i = 0; i < this.size(); i++) {
+//      if (this.get(i).posX == posX && this.get(i).posY == posY) {
+//        return i + 1;
+//      }
+//    }
+//    return 0;
+//  }
+
+  public void die(PositionedImage enemy) {
+    if (this.size() > 0) {
+      this.remove(enemy);
+    }
+  }
+
 }

@@ -12,6 +12,11 @@ public class PositionedImage {
   public static Map myMap;
   BufferedImage image;
   int posX, posY;
+  int health;
+  int baseDamage;
+  int armor;
+  boolean isFight;
+
 
   public PositionedImage(String filename, int posX, int posY, Map myMap) {
     this.posX = posX;
@@ -80,26 +85,24 @@ public class PositionedImage {
     this.posY = posY;
   }
 
-  public void patrolMove() {
-    Random generator = new Random();
-    switch (generator.nextInt(4)) {
-      case 0:
-        this.moveUp();
-        break;
-      case 1:
-        this.moveRight();
-        break;
-      case 2:
-        this.moveDown();
-        break;
-      case 3:
-        this.moveLeft();
-        break;
-    }
-    try {
-      Thread.sleep(200);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
+  public void patrolMove(boolean move) {
+    if (move) {
+
+      Random generator = new Random();
+      switch (generator.nextInt(4)) {
+        case 0:
+          this.moveUp();
+          break;
+        case 1:
+          this.moveRight();
+          break;
+        case 2:
+          this.moveDown();
+          break;
+        case 3:
+          this.moveLeft();
+          break;
+      }
     }
   }
 }

@@ -11,11 +11,12 @@ public class Board extends JComponent implements KeyListener {
   EnemyLayout myEnemies;
 
 
+
   public Board() {
 
     myMap = new Map();
-    myHero = new Hero(myMap);
     myEnemies = new EnemyLayout(myMap);
+    myHero = new Hero(myMap, myEnemies);
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -45,11 +46,13 @@ public class Board extends JComponent implements KeyListener {
   public void run() {
     while (true) {
       for (int i = 0; i < myEnemies.size(); i++) {
-        myEnemies.get(i).patrolMove();
+        if (!myEnemies.get(i).isFight) {
+          myEnemies.get(i).patrolMove(true);
+        }
         repaint();
       }
         try {
-          Thread.sleep(50);
+          Thread.sleep(800);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
@@ -82,6 +85,9 @@ public class Board extends JComponent implements KeyListener {
     }
     else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
       myHero.moveRight();
+    }
+    else if(e.getKeyCode() == KeyEvent.VK_SHIFT) {
+      myHero.hit();
     }
     repaint();
   }
