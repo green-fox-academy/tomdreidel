@@ -5,12 +5,16 @@ import java.util.Random;
 public class Hero extends Creature {
   EnemyLayout myEnemyList;
   Creature actualEnemy;
+  int mapCount;
+  int killCount;
 
   public Hero(Map myMap, EnemyLayout myEnemies) {
-    super("assets/hero-down.png", 0, 0);
-    this.myEnemyList = myEnemies;
+    super("assets/hero-down.png", 0, 0, myEnemies);
     this.health = 35;
     this.myMap = myMap;
+    this.myEnemyList = myEnemies;
+    this.mapCount = 1;
+    this.charLevel = 1;
   }
 
   @Override
@@ -59,11 +63,18 @@ public class Hero extends Creature {
   }
 
   public void hit() {
+    this.isFight = true;
     Random hit = new Random();
     if (actualEnemy.posX == this.posX && actualEnemy.posY == this.posY) {
       actualEnemy.health -= (5 + hit.nextInt(6));
-      if (actualEnemy.health < 1) {
+      if (actualEnemy.health <= 0) {
         myEnemyList.die(actualEnemy);
+        this.killCount ++;
+        if (killCount % 5 == 0) {
+          this.charLevel ++;
+        }
+        this.isFight = false;
+        return;
       }
     }
 
@@ -71,8 +82,10 @@ public class Hero extends Creature {
 
   public void fightScan() {
     for (int i = 0; i < this.myEnemyList.size(); i++) {
+      myEnemyList.get(i).freezeCreature = false;
       if (myEnemyList.get(i).posX == this.posX && myEnemyList.get(i).posY == this.posY) {
         actualEnemy = myEnemyList.get(i);
+        actualEnemy.freezeCreature = true;
 
       }
     }

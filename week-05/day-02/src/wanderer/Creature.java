@@ -3,14 +3,19 @@ package wanderer;
 import java.util.Random;
 
 public class Creature extends PositionedImage {
+
   Map myMap;
   int health;
   int baseDamage;
   int armor;
   boolean isFight;
+  boolean freezeCreature;
+  EnemyLayout myEnemyList;
+  int charLevel;
 
-  public Creature(String fileName, int posX, int posY) {
+  public Creature(String fileName, int posX, int posY, EnemyLayout myEnemyList) {
     super(fileName, posX, posY);
+    this.myEnemyList = myEnemyList;
   }
 
 
@@ -38,26 +43,31 @@ public class Creature extends PositionedImage {
     }
   }
 
-  public void patrolMove(boolean move) {
-    if (move) {
-
+  public void patrolMove() {
+    if (!this.freezeCreature) {
       Random generator = new Random();
       switch (generator.nextInt(4)) {
         case 0:
-          this.moveUp();
-          break;
+          if (!this.myEnemyList.collisionScan(this.posX, this.posY - 1)) {
+            this.moveUp();
+          }
+        break;
         case 1:
-          this.moveRight();
-          break;
+          if (!this.myEnemyList.collisionScan(this.posX + 1, this.posY)) {
+            this.moveRight();
+          }
+        break;
         case 2:
-          this.moveDown();
-          break;
+          if (!this.myEnemyList.collisionScan(this.posX, this.posY + 1)) {
+            this.moveDown();
+          }
+        break;
         case 3:
+        if (!this.myEnemyList.collisionScan(this.posX - 1, this.posY)) {
           this.moveLeft();
-          break;
+        }
+        break;
       }
     }
   }
-
-
 }

@@ -15,6 +15,9 @@ public class Map extends ArrayList<Wall> {
     }
   }
 
+
+
+
 //  public Map() {
 //
 //
