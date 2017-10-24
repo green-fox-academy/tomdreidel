@@ -23,6 +23,35 @@ public class Deck extends ArrayList<String> {
     for (int i = 0; i < 5; i++) {
       Random generator = new Random();
       int pull = generator.nextInt(this.size());
+
+
+
+      int myRandom = (int) Math.random();
+
+      int myAnotherRandom = (int) (((Math.random() * 50) + 100) -50);
+
+      System.out.println(     (int) (((Math.random() * 50) + 100) -50));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       myHand.add(this.get(pull));
       this.remove(pull);
     }

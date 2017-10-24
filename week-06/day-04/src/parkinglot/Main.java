@@ -5,11 +5,21 @@ import java.util.Collections;
 public class Main {
 
   public static void main(String[] args) {
+//
+//    ParkingLot parkingLot = new ParkingLot(256);
+//
+//    parkingLot.countType();
+//    parkingLot.countColor();
+//    parkingLot.countSame();
 
-    ParkingLot parkingLot = new ParkingLot(256);
+    System.out.println((char)27 + "[34m" + "Hello Blue World" + (char)27 + "[0m");
+    System.out.println((char)27 + "[31m" + "Hello Red World" + (char)27 + "[0m");
 
-    parkingLot.countType();
-    parkingLot.countColor();
+    int myBiggerRandom = (int) (((Math.random() * 50) + 100) -50);
+
+    System.out.println(     (int) (((Math.random() * 50) + 100) -50));
+
+    System.out.println((char)27);
 
 
 

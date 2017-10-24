@@ -40,5 +40,3 @@ public class Car {
     return carColor + " " + carType + "\n";
   }
 }
-
-//    Print the most frequently occurring vehicle
