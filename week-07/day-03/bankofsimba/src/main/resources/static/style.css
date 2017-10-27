@@ -1,0 +1,41 @@
+th {
+  border: 1px solid darkslategray;
+  text-align: left;
+  font-weight: normal;
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+  color: rebeccapurple;
+}
+
+body {
+  background-color: aqua;
+  font-family: 'Arial';
+}
+
+.king {
+  background-color: gold;
+}
+
+tr:hover {
+  background-color: rebeccapurple;
+  color: aliceblue;
+}
+
+#kingmaker {
+  background-color: gold;
+
+}
+
+tr > th:last-child {
+  border: none;
+  background-color: aqua;
+}
+
+.header > th:last-child {
+  border: 1px solid darkslategray;
+
+
+}

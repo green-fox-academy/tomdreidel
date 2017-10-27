@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/style.css}" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Thymeleaf Exercise #1</title>
+</head>
+<body>
+
+<p th:text="'Account holder: ' + ${account.getName()}"></p>
+<p th:text="'Balance: ' + ${#numbers.formatDecimal(account.getBalance(), 1, 2, 'POINT')} + ${account.getBalance() == 1 ? ' Stone' : ' Stones'}"></p>
+<p th:text="'The account holder is a ' + ${account.getAnimalType()}"></p>
+
+</body>
+</html>
