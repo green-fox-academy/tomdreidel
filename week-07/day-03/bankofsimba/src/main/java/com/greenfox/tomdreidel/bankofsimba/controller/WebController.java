@@ -2,7 +2,6 @@ package com.greenfox.tomdreidel.bankofsimba.controller;
 
 import com.greenfox.tomdreidel.bankofsimba.model.Bank;
 import com.greenfox.tomdreidel.bankofsimba.model.BankAccount;
-import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,13 +34,13 @@ public class WebController {
   }
 
   @PostMapping("/richbeasts")
-  public String richbeastsIncrease(@RequestParam(value = "name") int id, Model model) {
+  public String richbeastsIncrease(@RequestParam(value = "name") int id) {
     bank.increaseBalance(id);
     return "redirect:/richbeasts";
   }
 
   @PostMapping("/addaccount")
-  public String addAccount(@ModelAttribute BankAccount account, Model model) {
+  public String addAccount(@ModelAttribute BankAccount account) {
     bank.addAcount(account);
     return "redirect:/richbeasts";
   }

@@ -4,24 +4,31 @@ th {
   font-weight: normal;
 }
 
+
 .header {
   text-align: center;
   font-weight: bold;
-  color: rebeccapurple;
+  color: navajowhite;
+  background-color: orangered;
 }
 
 body {
-  background-color: aqua;
+  background-color: darkorange;
   font-family: 'Arial';
+  font-size: 1.6em;
 }
 
 .king {
   background-color: gold;
 }
 
+.king th:last-child {
+  background-color: darkorange;
+}
+
 tr:hover {
-  background-color: rebeccapurple;
-  color: aliceblue;
+  background-color: darkviolet;
+  color: cornflowerblue;
 }
 
 #kingmaker {
@@ -31,11 +38,19 @@ tr:hover {
 
 tr > th:last-child {
   border: none;
-  background-color: aqua;
+  /*background-color: aqua;*/
 }
 
 .header > th:last-child {
   border: 1px solid darkslategray;
+}
 
+input {
+  height: 2em;
+  vertical-align: middle;
+}
 
+button {
+  height: 2em;
+  vertical-align: middle;
 }

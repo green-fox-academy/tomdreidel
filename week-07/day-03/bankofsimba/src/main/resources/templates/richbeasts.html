@@ -25,17 +25,13 @@
     <th th:text="${account.isGoodGuy() ? 'Good one' : 'Bad guy'}"></th>
     <form action="#" th:action="@{/richbeasts}" method="post">
       <input name="name" type="hidden" th:value="${account.getId()}"/>
-      <th><button type="submit">Increase</button></th>
+      <th><button type="submit">Give stones</button></th>
     </form>
   </tr>
 
   <tr class="addaccount">
     <form action="#" th:action="@{/addaccount}" th:object="${addaccount}" method="post">
       <th><input type="submit" value="Add account"/></th>
-      <select>
-
-      </select>
-
       <th><input type="text" th:field="*{name}"/></th>
       <th><input type="number" th:field="*{balance}" min="1" value="1" placeholder="1 or more"/></th>
       <th><input type="text" th:field="*{animalType}"/></th>
