@@ -13,17 +13,15 @@ public class TodoController {
   @Autowired
   TodoRepository todoRepository;
 
-@RequestMapping("/todo")
+  @RequestMapping("/todo")
   public String list(Model model) {
-  return "/todo";
-}
+  model.addAttribute("todoRepository", todoRepository.findAll());
+  return "todo";
+  }
 
-@RequestMapping(value={"/", "/list"})
-@ResponseBody
+  @RequestMapping(value={"/", "/list"})
+  @ResponseBody
   public String todo() {
   return "This is my first todo";
-}
-
-
-
+  }
 }
