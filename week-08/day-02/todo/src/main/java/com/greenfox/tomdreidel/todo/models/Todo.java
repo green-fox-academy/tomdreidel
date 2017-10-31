@@ -23,6 +23,8 @@ public class Todo {
   }
 
   public Todo() {
+    this.dateCreated = Timestamp.valueOf(LocalDateTime.now());
+
   }
 
   public int getId() {

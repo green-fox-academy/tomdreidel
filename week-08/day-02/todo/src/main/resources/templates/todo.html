@@ -8,9 +8,10 @@
 
 <body>
 <h1>TODOS FOR TODAY:</h1>
+  <a th:href="@{/todo/add}">Add new task</a>
 
 <table>
-  <colgroup span="4"></colgroup>
+  <colgroup span="5"></colgroup>
   <tr class="header">
     <th>Id</th>
     <th>Action</th>
@@ -22,6 +23,7 @@
     <th th:text="${todo.getTitle()}"></th>
     <th th:text="${todo.getIsUrgent()}"></th>
     <th th:text="${todo.getIsCompleted()}"></th>
+    <th><a th:href="@{/todo/delete/} + ${todo.getId()}">delete</a></th>
   </tr>
 </table>
 
