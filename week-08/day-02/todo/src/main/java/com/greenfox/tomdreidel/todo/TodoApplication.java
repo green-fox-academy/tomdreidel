@@ -1,6 +1,5 @@
 package com.greenfox.tomdreidel.todo;
 
-import com.greenfox.tomdreidel.todo.models.Todo;
 import com.greenfox.tomdreidel.todo.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,8 +18,6 @@ public class TodoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-	  todoRepository.save(new Todo("My first todo in mySQL"));
-	  todoRepository.save(new Todo("My second todo in mySQL"));
 
 	}
 }
