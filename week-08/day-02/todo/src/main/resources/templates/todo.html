@@ -23,10 +23,10 @@
     <th th:text="${todo.getTitle()}"></th>
     <th th:text="${todo.getIsUrgent()}"></th>
     <th th:text="${todo.getIsCompleted()}"></th>
+    <th><a th:href="@{/todo/edit/} + ${todo.getId()}">edit</a></th>
     <th><a th:href="@{/todo/delete/} + ${todo.getId()}">delete</a></th>
   </tr>
 </table>
-
 
 </body>
 </html>

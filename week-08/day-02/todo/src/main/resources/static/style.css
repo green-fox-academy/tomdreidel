@@ -22,31 +22,9 @@ body {
   font-size: 1.6em;
 }
 
-.king {
-  background-color: gold;
-}
-
-.king th:last-child {
-  background-color: darkorange;
-}
-
 tr:hover {
   background-color: darkviolet;
   color: cornflowerblue;
-}
-
-#kingmaker {
-  background-color: gold;
-
-}
-
-tr > th:last-child {
-  border: none;
-  /*background-color: aqua;*/
-}
-
-.header > th:last-child {
-  border: 1px solid darkslategray;
 }
 
 input {
