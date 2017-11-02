@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.apache.tomcat.jni.Time;
 
 @Entity
 public class Todo {
@@ -18,6 +17,7 @@ public class Todo {
   private boolean isUrgent;
   private boolean isCompleted;
   private Timestamp dateCreated;
+  private Timestamp dateDue;
 
   public Todo(String title) {
     this.title = title;
@@ -26,12 +26,19 @@ public class Todo {
 
   public Todo() {
     this.dateCreated = Timestamp.valueOf(LocalDateTime.now());
+    this.dateDue = Timestamp.valueOf(LocalDateTime.now().plusHours(24));
+
 
   }
 
   public String elapsedTime() {
     long minutes = Duration.between(this.dateCreated.toLocalDateTime(), LocalDateTime.now()).toMinutes();
     return (minutes < 60) ? minutes + " minutes ago" : minutes / 60 + " hours ago";
+  }
+
+  public String dateDue() {
+    long toDue = Duration.between(this.dateCreated.toLocalDateTime(), this.dateDue.toLocalDateTime()).toMinutes();
+    return "Due in " + ((toDue < 60) ? toDue + " minutes" : toDue / 60 + " hours");
   }
 
   public int getId() {
@@ -70,4 +77,8 @@ public class Todo {
     return dateCreated;
   }
 
+
+  public void setDateDue(Timestamp dateDue) {
+    this.dateDue = dateDue;
+  }
 }

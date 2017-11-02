@@ -2,6 +2,7 @@ package com.greenfox.tomdreidel.todo.controllers;
 
 import com.greenfox.tomdreidel.todo.models.Todo;
 import com.greenfox.tomdreidel.todo.repositories.TodoRepository;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @RequestMapping("/todo")
@@ -20,16 +23,36 @@ public class TodoController {
   TodoRepository todoRepository;
 
   @RequestMapping(value = {"", "/"})
-  public String listCompleted(@RequestParam(value = "isCompleted", required = false, defaultValue = "") String completed, Model model) {
-    if (completed.equals("false")) {
-      model.addAttribute("todoRepository", todoRepository.filterActive());
-    }
-    else {
-      model.addAttribute("todoRepository", todoRepository.findAll());
-    }
+  public String listCompleted(Model model) {
+
+    model.addAttribute("todoRepository", todoRepository.findAll());
+
     model.addAttribute("count", todoRepository.count());
     model.addAttribute("todo", new Todo());
+    model.addAttribute("editTodo", new Todo());
     return "todo";
+  }
+
+  @GetMapping("/active")
+  public String active(Model model) {
+    model.addAttribute("todoRepository", todoRepository.findAllByIsCompletedIsFalse());
+    model.addAttribute("count", todoRepository.count());
+    model.addAttribute("todo", new Todo());
+    model.addAttribute("editTodo", new Todo());
+    return "todo";
+  }
+
+  @PostMapping("/search/{search}")
+  public String search(@PathVariable(required = false) String search, Model model) {
+    model.addAttribute("todoRepository", todoRepository.findAllByTitleContains(search));
+    model.addAttribute("count", todoRepository.count());
+    model.addAttribute("todo", new Todo());
+    model.addAttribute("editTodo", new Todo());
+    return "todo";
+  }
+  @PostMapping("/search/")
+  public String searchBlank() {
+    return "redirect:/todo";
   }
 
   @GetMapping("/add")
