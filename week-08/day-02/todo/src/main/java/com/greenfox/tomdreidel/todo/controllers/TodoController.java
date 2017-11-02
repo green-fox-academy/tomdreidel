@@ -27,7 +27,9 @@ public class TodoController {
     else {
       model.addAttribute("todoRepository", todoRepository.findAll());
     }
-      return "todo";
+    model.addAttribute("count", todoRepository.count());
+    model.addAttribute("todo", new Todo());
+    return "todo";
   }
 
   @GetMapping("/add")

@@ -12,8 +12,8 @@
 <form th:action="@{/todo/edit}" th:object="${editTodo}" method="post">
   <input type="hidden" th:field="*{id}" th:value="*{id}"/>
   <input type="text" th:field="*{title}" th:value="*{title}"/>
-  <input type="checkbox" th:field="*{isUrgent}" th:value="*{isUrgent}"/>
-  <input type="checkbox" th:field="*{isCompleted}" th:value="*{isCompleted}"/>
+  <label>Urgent<input type="checkbox" th:field="*{isUrgent}" th:value="*{isUrgent}"/></label>
+  <label>Completed<input type="checkbox" th:field="*{isCompleted}" th:value="*{isCompleted}"/></label>
   <button type="submit">Save</button>
 </form>
 

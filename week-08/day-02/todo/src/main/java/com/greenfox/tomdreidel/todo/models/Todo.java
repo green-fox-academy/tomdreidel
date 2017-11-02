@@ -1,11 +1,13 @@
 package com.greenfox.tomdreidel.todo.models;
 
 import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.apache.tomcat.jni.Time;
 
 @Entity
 public class Todo {
@@ -25,6 +27,11 @@ public class Todo {
   public Todo() {
     this.dateCreated = Timestamp.valueOf(LocalDateTime.now());
 
+  }
+
+  public String elapsedTime() {
+    long minutes = Duration.between(this.dateCreated.toLocalDateTime(), LocalDateTime.now()).toMinutes();
+    return (minutes < 60) ? minutes + " minutes ago" : minutes / 60 + " hours ago";
   }
 
   public int getId() {
