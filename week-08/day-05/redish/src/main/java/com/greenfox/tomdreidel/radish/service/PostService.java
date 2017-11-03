@@ -34,5 +34,4 @@ public class PostService {
   public void addPost(Post post) {
     postRepository.save(post);
   }
-
 }

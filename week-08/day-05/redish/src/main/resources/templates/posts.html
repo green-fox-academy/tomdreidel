@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Radish</title>
+  </head>
+
+  <body>
+
+    <table>
+      <colgroup span="5"></colgroup>
+      <tr>
+        <th>Id</th>
+        <th></th>
+        <th></th>
+        <th>Rank</th>
+        <th>Content</th>
+      </tr>
+      <tr th:each="post : ${allPosts}">
+        <td th:text="${post.getPostId()}"></td>
+        <td><a th:href="@{/radish/posts/} + ${post.getPostId()} + '/increase'">+</a></td>
+        <td><a th:href="@{/radish/posts/} + ${post.getPostId()} + '/decrease'">-</a></td>
+        <td th:text="${post.getPostRank()}"></td>
+        <td th:text="${post.getPostContent()}"></td>
+      </tr>
+    </table>
+
+    <h3>
+      <a th:href="@{/radish/posts/add}">Add new post</a>
+    </h3>
+
+  </body>
 </html>
