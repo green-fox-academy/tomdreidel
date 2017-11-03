@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Todolist</title>
+  <title>ToCan</title>
   <!-- Required meta tags -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -21,6 +21,26 @@
     <a class="nav-link active text-light" href="#" data-toggle="modal" data-target="#addModal">Add new task</a>
   </div>
 
+  <div class="nav-item dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Assignees
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" th:each="assignee : ${assigneeRepository}">
+      <button class="dropdown-item btn-dark" type="button">
+        <a th:href="@{/todo/assignee}" class="dropdown-item" role="button">Assignees</a>
+      </button>      <button class="dropdown-item btn-dark" type="button">
+        <a th:href="@{/todo}" class="dropdown-item" role="button">Clear Filters</a>
+      </button>
+      <button th:each="assignee : ${assigneeRepository}" class="dropdown-item btn-dark" type="button">
+
+        <a class="dropdown-item btn-dark" th:href="@{/todo/assignee/} + ${assignee.getAssigneeId()}" th:text="${assignee.getName()}" role="button"></a>
+      </button>
+    </div>
+  </div>
+
+
+
+
   <form id="searchForm" class="form-inline" th:action="@{/todo/search/}" method="post">
     <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
     <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
@@ -28,7 +48,7 @@
 
   <div class="nav-item dropdown">
     <a class="nav-link dropdown-toggle text-light bg-dark" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Tamas <span style="vertical-align: top;" class="badge badge-danger badge-pill" th:text="${count}">19</span>
+      Tamas <span style="vertical-align: top;" class="badge badge-danger badge-pill" th:text="${count}"></span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       <a class="dropdown-item" href="#">Settings</a>
@@ -57,32 +77,40 @@
 </button></a>
 
 
+
+
 <!-- List -->
 
 <table class="table table-striped table-hover table-sm">
   <thead class="dark">
   <tr>
     <th scope="col">Task</th>
-    <th scope="col">Urgent</th>
-    <th scope="col">Done</th>
+    <th scope="col"></th>
     <th scope="col">Created</th>
     <th scope="col">Deadline</th>
+    <th scope="col"></th>
     <th scope="col"></th>
   </tr>
   </thead>
   <tbody>
-  <tr th:each="todo : ${todoRepository}" th:class="${todo.getIsCompleted() ? 'table-success' : ''}">
+  <tr th:each="todo : ${todoRepository}" th:class="${todo.getIsCompleted() ? 'table-success' : ''}" th:classappend="${todo.getIsUrgent() ? 'table-warning' : ''}">
     <!--<th scope="row" th:text="${todo.getId()}"></th>-->
     <td th:text="${todo.getTitle()}"></td>
-    <td th:text="${todo.getIsUrgent()}"></td>
-    <td th:text="${todo.getIsCompleted()}"></td>
-    <td th:text="${todo.elapsedTime()}"></td>
-    <td th:text="${todo.dateDue()}"></td>
     <td>
-
       <div class="btn-group" role="group" aria-label="Control buttons">
-        <a th:href="@{/todo/edit/} + ${todo.getId()}"><button type="button" class="btn btn-secondary">Edit</button></a>
-        <a th:href="@{/todo/delete/} + ${todo.getId()}"><button type="button" class="btn btn-secondary ">Delete</button></a>
+        <a th:href="@{/todo/urgent/} + ${todo.getId()}" role="button" class="btn btn-outline-warning btn-sm">Urgent</a>
+        <a th:href="@{/todo/completed/} + ${todo.getId()}" role="button" class="btn btn-outline-success btn-sm">Completed</a>
+      </div>
+    </td>
+
+    <!--<td th:text="${todo.getIsUrgent()}"></td>-->
+    <!--<td th:text="${todo.getIsCompleted()}"></td>-->
+    <td th:text="${todo.elapsedTime()}"></td>
+    <td th:text="${todo.dateDue()}" th:class="${todo.dateDue() == ('Overdue') ? 'text-danger' : ''}"></td>
+    <td>
+      <div class="btn-group" role="group" aria-label="Control buttons">
+        <a role="button" class="btn btn-outline-info btn-sm" th:href="@{/todo/edit/} + ${todo.getId()}">Edit</a>
+        <a aria-disabled="true" role="button" class="btn btn-outline-danger btn-sm" th:href="@{/todo/delete/} + ${todo.getId()}">Delete</a>
       </div>
     </td>
   </tr>

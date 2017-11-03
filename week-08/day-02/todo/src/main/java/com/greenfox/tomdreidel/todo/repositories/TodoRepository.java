@@ -13,4 +13,9 @@ public interface TodoRepository extends CrudRepository<Todo, Integer> {
 
   public List<Todo> findAllByTitleContains(String search);
 
+
+  @Query (value = "select t.* from todo t join assignee_todos j on t.id = j.todos_id join assignee a on j.assignee_assignee_id = a.assignee_id where assignee_id = ?1", nativeQuery = true)
+  public List<Todo> searchByAssignee(int assignee_id);
+
+
 }
