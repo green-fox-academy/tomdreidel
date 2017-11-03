@@ -140,6 +140,7 @@ public class TodoController {
     }
     else {
     model.addAttribute("todoRepository", todoRepository.searchByAssignee(id));
+//    model.addAttribute("todoRepository", todoRepository.findAllByAssigneeListEquals(id));
     model.addAttribute("count", todoRepository.searchByAssignee(id).size());
     }
     model.addAttribute("assigneeRepository", assigneeRepository.findAll());
