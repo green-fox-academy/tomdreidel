@@ -8,13 +8,14 @@
   <body>
 
     <table>
-      <colgroup span="5"></colgroup>
+      <colgroup span="6"></colgroup>
       <tr>
         <th>Id</th>
         <th></th>
         <th></th>
         <th>Rank</th>
         <th>Content</th>
+        <th>Posted</th>
       </tr>
       <tr th:each="post : ${allPosts}">
         <td th:text="${post.getPostId()}"></td>
@@ -22,6 +23,7 @@
         <td><a th:href="@{/radish/posts/} + ${post.getPostId()} + '/decrease'">-</a></td>
         <td th:text="${post.getPostRank()}"></td>
         <td th:text="${post.getPostContent()}"></td>
+        <td th:text="${post.getDateCreated()}"></td>
       </tr>
     </table>
 

@@ -13,7 +13,7 @@ public class PostService {
   PostRepository postRepository;
 
   public Model listAll(Model model) {
-    model.addAttribute("allPosts", postRepository.findAll());
+    model.addAttribute("allPosts", postRepository.rankedList());
     return model;
   }
 
