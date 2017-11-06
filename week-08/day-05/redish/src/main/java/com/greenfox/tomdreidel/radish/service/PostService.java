@@ -2,9 +2,9 @@ package com.greenfox.tomdreidel.radish.service;
 
 import com.greenfox.tomdreidel.radish.model.Post;
 import com.greenfox.tomdreidel.radish.repository.PostRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 @Service
 public class PostService {
@@ -12,9 +12,8 @@ public class PostService {
   @Autowired
   PostRepository postRepository;
 
-  public Model listAll(Model model) {
-    model.addAttribute("allPosts", postRepository.rankedList());
-    return model;
+  public List<Post> listAll() {
+    return postRepository.rankedList();
   }
 
   public void increaseRank(long id) {

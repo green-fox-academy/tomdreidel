@@ -20,7 +20,7 @@ public class PostController {
 
   @RequestMapping("/posts")
   public String listPosts(Model model) {
-    postService.listAll(model);
+    model.addAttribute("allPosts", postService.listAll());
     return "posts";
   }
 
