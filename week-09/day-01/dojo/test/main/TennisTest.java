@@ -95,5 +95,4 @@ public class TennisTest {
     TennisGame3 game = new TennisGame3("player1", "player2");
     checkAllScores(game);
   }
-
 }
