@@ -1,12 +1,14 @@
 package com.greenfox.tomdreidel.restful.controller;
 
 import com.greenfox.tomdreidel.restful.model.Appenda;
+import com.greenfox.tomdreidel.restful.model.ArraysError;
 import com.greenfox.tomdreidel.restful.model.DoUntil;
 import com.greenfox.tomdreidel.restful.model.DoUntilError;
 import com.greenfox.tomdreidel.restful.model.DoublingError;
 import com.greenfox.tomdreidel.restful.model.DoublingResult;
 import com.greenfox.tomdreidel.restful.model.GreetingError;
 import com.greenfox.tomdreidel.restful.model.GreetingResult;
+import com.greenfox.tomdreidel.restful.model.RestArray;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -61,4 +63,26 @@ public class MainRestController {
       return until.getResult();
     }
   }
+
+  @PostMapping("/arrays")
+  public Object arrays(@RequestBody(required = false) RestArray array) {
+    if (array == null) {
+      return new ArraysError("number");
+    }
+    else if (array.getWhat().equals("sum")) {
+      return array.sumNumbers();
+    }
+    else if (array.getWhat().equals("multiply")) {
+      return array.multiplyNumbers();
+    }
+    else if (array.getWhat().equals("double")) {
+      return array.doubleNumbers();
+    }
+    else {
+      return new ArraysError("what");
+    }
+  }
+
+
+
 }
