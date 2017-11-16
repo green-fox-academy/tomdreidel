@@ -1,6 +1,7 @@
 package com.greenfox.tomdreidel.chatfactory;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,25 @@ public class MainActivity extends AppCompatActivity {
     Message enteredMessage;
     Button sendButton;
     MessageAPI service;
+    private final static int INTERVAL = 1000 * 5; // 5 seconds
+    Handler mHandler = new Handler();
+
+    Runnable mHandlerTask = new Runnable() {
+        @Override
+        public void run() {
+            refreshMessages();
+            mHandler.postDelayed(mHandlerTask, INTERVAL);
+        }
+    };
+    void startRepeatingTask()
+    {
+        mHandlerTask.run();
+    }
+
+    void stopRepeatingTask()
+    {
+        mHandler.removeCallbacks(mHandlerTask);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         service = retrofit.create(MessageAPI.class);
 
-        service.getMessages().enqueue(new Callback<List<Message>>() {
-            @Override
-            public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
-                messageAdapter.clear();
-                messageAdapter.addAll(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<List<Message>> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
+        refreshMessages();
+        startRepeatingTask();
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +86,21 @@ public class MainActivity extends AppCompatActivity {
 
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+        });
+    }
+
+    public void refreshMessages() {
+        service.getMessages().enqueue(new Callback<List<Message>>() {
+            @Override
+            public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
+                messageAdapter.clear();
+                messageAdapter.addAll(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<Message>> call, Throwable t) {
+                t.printStackTrace();
             }
         });
     }

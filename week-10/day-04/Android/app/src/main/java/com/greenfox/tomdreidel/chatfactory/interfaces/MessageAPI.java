@@ -14,7 +14,7 @@ import retrofit2.http.POST;
 
 public interface MessageAPI {
 
-    @GET("/api/message/all")
+    @GET("/api/message/current")
     Call<List<Message>> getMessages();
 
     @POST("/api/message/send")
