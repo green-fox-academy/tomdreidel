@@ -6,7 +6,7 @@
 
 ## Skills
 
-The student, on their own, is able to:
+The student, on his own, is able to:
 
  -  Use the command line:
      -  Traversing directories
@@ -14,15 +14,15 @@ The student, on their own, is able to:
      -  Passing command line arguments to commands
  -  Use git:
      -  Commit, add, push, pull
-     -  Review other's code
- -  Follow indentation and coding styleguides in their code
+     -  [Review other's code](https://github.com/greenfox-academy/pkrisz0/commit/6985fec76bdf542fc9b17aea050dfcd1a936d281#comments)
+ -  [Follow indentation and coding styleguides in their code](https://github.com/greenfox-academy/tomdreidel-chatfactory/blob/master/src/main/java/com/greenfox/tomdreidel/chatapp/model/LogEntry.java)
  -  Create variables and methods on a given specification
  -  [Use conditions and loops:](https://github.com/greenfox-academy/tomdreidel/blob/master/week-02/day-05/src/Armstrong.java)
      -  Filtering
      -  Finding elements or index
      -  Generating lists
-     -  Checking mutiple values and counting
-     -  Maping values
+     -  Checking multiple values and counting
+     -  [Maping values](https://github.com/greenfox-academy/tomdreidel/blob/master/week-02/day-03/src/StudentCounter.java)
  -  [Use object orientation:](https://github.com/greenfox-academy/tomdreidel/tree/master/week-05/day-02/src/wanderer)
      -  Create and inherit classes including fields and methods on a given specification
      -  Understanding the difference between classes and objects
@@ -44,9 +44,9 @@ The student, on their own, is able to:
 
 ## Queries
 
-- usage of language integrated quaries e.g. LINQ/StreamApi
+- [usage of language integrated queries e.g. LINQ/StreamApi](https://github.com/tomdreidel/lambda/blob/master/src/Main.java)
 - understanding the syntax
-- able to write simple custom quaries
+- able to write simple custom queries
 
 ## [Build tool](https://github.com/greenfox-academy/temproject/blob/master/build.gradle)
 
@@ -74,7 +74,7 @@ The student, on their own, is able to:
 
 ## Data persistance
 
-- understanding and usage of basic SQL commands
+- [understanding and usage of basic SQL commands](https://github.com/greenfox-academy/temproject/blob/master/src/main/java/com/greenfox/temproject/repositories/CityRepo.java)
   - `select`, `insert`, `update`, `delete`
 - connecting database to backend application
   - [database framework configuration](https://github.com/greenfox-academy/temproject/blob/master/src/main/resources/application.properties)
