@@ -36,7 +36,7 @@ The student, on his own, is able to:
  
 # Backend Orientation Exam Competencies
 
-## Interfaces and abstract classes
+## [Interfaces and abstract classes](https://github.com/greenfox-academy/huli-internal-metrics/blob/development/src/main/java/com/huli/internalmetrics/event/models/Event.java)
 
 - usage of interfaces and abstract classes
 - understanding the difference between interfaces and abstract classes
