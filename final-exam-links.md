@@ -2,7 +2,7 @@
 
 ## Accomplishments
 
- -  [Multiple daily commits on the latest week](https://github.com/tomdreidel)
+ -  Multiple daily commits on the latest week
 
 ## Skills
 
